@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0">
+    <title>Clicker</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1 class="title">Clicker <span class="author">by @<a>Stářa</a></span></h1>
+    <div class="game-container">
+        <p id="error" class="error-container"></p>
+        <ul class="pp-container">
+            <li class="ppc-container"><h3><span id="ppc">0</span> PPC</li>
+            <li class="pps-container"><h3><span id="pps">0</span> PPS</h3></h3></li>
+        </ul>
+        <h2 class="money-container"><span id="money">0</span> Money</h2>
+
+        <table class="shop-container">
+            <tbody id="shop-container"></tbody>
+        </table>
+
+        <button class="btn-work" id="work">Work</button>
+        
+    </div>
+    <script>
+        // Check that service workers are supported
+        if ('serviceWorker' in navigator) {
+          // Use the window load event to keep the page load performant
+          window.addEventListener('load', () => {
+            navigator.serviceWorker.register('js/service-worker.js');
+          });
+        }
+        </script>
+    <script src="js/app.js" defer></script>
+</body>
+</html>
