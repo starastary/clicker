@@ -5,9 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0">
     <title>Clicker</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/reset.css">
-<link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="/icons/apple-icon-180.png">
+    <meta name="theme-color" content=" #00ff1e"/>
 </head>
 <body>
     <h1 class="title">Clicker <span class="author">by @<a>Stářa</a></span></h1>
@@ -31,7 +34,7 @@
         if ('serviceWorker' in navigator) {
           // Use the window load event to keep the page load performant
           window.addEventListener('load', () => {
-            navigator.serviceWorker.register('js/service-worker.js');
+            navigator.serviceWorker.register('/js/service-worker.js');
           });
         }
         </script>
