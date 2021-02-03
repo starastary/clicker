@@ -55,15 +55,24 @@ if(localStorage.getItem('pps')) {
 displayMoney();
 displayPPC();
 displayPPS();
-
+let clickLimit = 0
 workBtn.addEventListener("click", function() {
-    money = money + ppc;
-    displayMoney();
+    if(clickLimit < 20) {
+        money = money + ppc;
+        displayMoney();
+    } else {
+        errorDisplay.innerHTML = "You are clickingto fast!"
+
+        setTimeout(() => {
+            errorDisplay.innerHTML = "";
+        }, 3000);
+    }
 });
 
 setInterval(() => {
     addPPS();
     save();
+    clickLimit = 0;
 }, 1000);
 
 function addPPS() {
